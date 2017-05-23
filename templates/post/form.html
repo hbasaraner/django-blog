@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Yeni Yazı Ekle - {{ block.super }}
+{% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block body %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <h1>Form</h1>
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    {{ form.media }}
+                    <input class="btn btn-primary" type="submit" value="Post Oluştur">
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

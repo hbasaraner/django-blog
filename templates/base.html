@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Wordlogger{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        #footer
+        {
+            clear: both;
+            background: #9b9b9b;
+            color: White;
+            padding: 0;
+            text-align: center;
+            vertical-align: middle;
+            line-height: normal;
+            margin: 0;
+            position: fixed;
+            bottom: 0px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    {% include 'messages.html' %}
+
+    {% include "header.html" %}
+
+    {% block body %}
+
+    {% endblock %}
+
+    <div class="footer" id="footer">Hayrettin Başaraner - 2017</div>
+
+
+    <script src="{% static "js/jquery.min.js" %}"></script>
+    <script src="{% static "js/bootstrap.min.js" %}"></script>
+
+</body>
+</html>
